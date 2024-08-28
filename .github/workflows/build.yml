@@ -6,9 +6,9 @@ on:
     types: [closed]
   workflow_dispatch:
 
-defaults:
-  run:
-    working-directory: ./go-ethereum/
+# defaults:
+#   run:
+#     working-directory: ./go-ethereum/
 
 jobs:
   lime-pline:
@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Introduction
         run: echo "The PR with label "CI:Build" has been merged succesffully. We are going to build a new docker image and upload it to DockerHub."
-        
+        working-directory: ./go-ethereum
       - name: Checkout  
         uses: actions/checkout@v3
 
