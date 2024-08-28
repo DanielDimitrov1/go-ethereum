@@ -13,10 +13,8 @@ defaults:
 jobs:
   lime-pline:
     runs-on: ubuntu-latest
-    # environment: production
 
     steps:
-      - run: echo "The pr merged"
       - name: Checkout  
         uses: actions/checkout@v3
 
@@ -41,6 +39,3 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64
           tags: danieldim12/my-image:latest  
-          # secrets: |
-          #   "secret_1=${{ secrets.MY_SECRET_1 }}"
-          #   "secret_2=${{ secrets.MY_SECRET_2 }}"
