@@ -16,6 +16,7 @@ jobs:
     # environment: production
 
     steps:
+      - run: echo "The pr merged"
       - name: Checkout  
         uses: actions/checkout@v3
 
