@@ -6,9 +6,9 @@ on:
     types: [closed]
   workflow_dispatch:
 
-# defaults:
-#   run:
-#     working-directory: ./go-ethereum/
+defaults:
+  run:
+    working-directory: ./go-ethereum/
 
 jobs:
   lime-pline:
