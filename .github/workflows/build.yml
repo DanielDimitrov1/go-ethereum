@@ -6,7 +6,6 @@ on:
     label: ['CI:Build']
     branches:
       - master
-
   workflow_dispatch:
 
 defaults:
@@ -16,7 +15,6 @@ defaults:
 jobs:
   push-app-image:
     runs-on: ubuntu-latest
-    environment: production
     if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'CI:Build')
 
     steps:
@@ -42,7 +40,7 @@ jobs:
           context: .
           file: Dockerfile
           platforms: linux/amd64
-          tags: danieldim12/my-image:latest  
+          tags: danieldim12/limechainImage:latest  
           secrets: |
             "secret_1=${{ secrets.MY_SECRET_1 }}"
             "secret_2=${{ secrets.MY_SECRET_2 }}"
