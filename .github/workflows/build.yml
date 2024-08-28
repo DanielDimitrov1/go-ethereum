@@ -1,9 +1,9 @@
 name: Build & push
-
 on:
-  push:
-    branches: [ main ]
-
+  pull_request:
+    branches: 
+      - master
+    types: [closed]
   workflow_dispatch:
 
 defaults:
