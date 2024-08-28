@@ -16,8 +16,6 @@ jobs:
     environment: production
 
     steps:
-      - name: Introduction
-        run: echo "The PR with label CI Build has been merged successfully"
       - name: Checkout  
         uses: actions/checkout@v3
 
