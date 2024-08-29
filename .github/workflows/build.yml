@@ -3,7 +3,7 @@ on:
   pull_request:
     branches: 
       - master
-    types: [closed]
+    types: [closed, labeled ]
   workflow_dispatch:
 
 defaults:
@@ -12,6 +12,7 @@ defaults:
 
 jobs:
   lime-pline:
+    if: ${{ github.event.label.name == 'CI:Build' }}
     runs-on: ubuntu-latest
 
     steps:
