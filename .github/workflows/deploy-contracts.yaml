@@ -1,0 +1,33 @@
+name: Deploy Contracts
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.labels[*].name == 'CI:Deploy'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run local devnet
+        run: |
+          docker-compose up -d geth
+      - name: Deploy contracts
+        run: npx hardhat run scripts/sample-script.js --network localhost
+      - name: Build Docker image with deployed contracts
+        run: |
+          docker build -t my-contract-image .
+      - name: Push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: user/repo:contracts-latest
