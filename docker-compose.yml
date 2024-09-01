@@ -1,18 +1,10 @@
-version: '3.8'
-
+version: '3'
 services:
-  devnet:
+  geth:
     image: danieldim12/my-image:latest 
-    container_name: devnet_container #new
-    restart: unless-stopped
     ports:
-      - "8545:8545"  
+      - "8545:8545"
+      - "30303:30303"
     volumes:
-      - ./data:/data  
-    networks:
-      - devnet
-
-networks:
-  devnet:
-    driver: bridge
- 
+      - ./data:/root/.ethereum
+    command: --http --http.addr 0.0.0.0 --http.api personal,eth,net,web3 --ws --ws.addr 0.0.0.0 --ws.api personal,eth,net,web3 --ws.origins "*"
