@@ -4,6 +4,7 @@ on:
   pull_request:
     types: [closed]
     branches: [main]
+  workflow_dispatch:  
 
 jobs:
   deploy:
@@ -14,14 +15,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '22'
+          
       - name: Install dependencies
         run: npm ci
+        
       - name: Run local devnet
         run: |
           docker-compose up -d geth
+          
       - name: Deploy contracts
         run: npx hardhat run scripts/sample-script.js --network localhost
+        
       - name: Build Docker image with deployed contracts
         run: |
           docker build -t my-image .
@@ -30,10 +35,11 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/repo:contracts-latest
+          platforms: linux/amd64
+          tags: danieldim12/my-image:latest
 
       - name: Run Hardhat tests
         run: |
-          docker run -p 8545:8545 -d my-image
+          docker run -p 8545:8545 -d my-image:latest
           sleep 10 
           npx hardhat test
