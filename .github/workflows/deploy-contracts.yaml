@@ -34,6 +34,6 @@ jobs:
 
       - name: Run Hardhat tests
         run: |
-          docker run -p 8545:8545 -d my-contract-image
+          docker run -p 8545:8545 -d my-image
           sleep 10 
           npx hardhat test
