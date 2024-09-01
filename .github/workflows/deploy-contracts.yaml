@@ -31,3 +31,9 @@ jobs:
           context: .
           push: true
           tags: user/repo:contracts-latest
+
+      - name: Run Hardhat tests
+        run: |
+          docker run -p 8545:8545 -d my-contract-image
+          sleep 10 
+          npx hardhat test
