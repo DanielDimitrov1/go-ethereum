@@ -2,13 +2,13 @@ version: '3.8'
 
 services:
   devnet:
-    image: danieldim12/my-image:latest  # Use your newly built Docker image
+    image: danieldim12/my-image:latest 
     container_name: devnet_container #new
     restart: unless-stopped
     ports:
-      - "8545:8545"  # Example port mapping, adjust as necessary
+      - "8545:8545"  
     volumes:
-      - ./data:/data  # Example volume mount for data persistence
+      - ./data:/data  
     networks:
       - devnet
 
