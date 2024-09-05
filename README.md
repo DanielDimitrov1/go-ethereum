@@ -1,6 +1,6 @@
 ## Go Ethereum
 
- I will go ahead and explain my work shortly. The solutions for the tasks are placed as it comes below: br /
+ I will go ahead and explain my work shortly. The solutions for the tasks are placed as it comes below: <br />
 
  **Taks 2:** is done within the directory: .github/workflows/docker-build.yml br /
  **Task 3:** is placed within directories:
