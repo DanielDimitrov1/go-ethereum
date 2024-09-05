@@ -101,7 +101,7 @@ resource "aws_eks_node_group" "main" {
 resource "null_resource" "deploy_to_k8s" {
   provisioner "local-exec" {
     command = <<EOF
-      aws eks get-token --cluster-name ${aws_eks_cluster.main.name} | jq -r '.status.token' > token.txt
+      aws eks get-token --cluster-name ${aws_eks_cluster.main.name} | jq -r '.status.token' > /mnt/d/eeeeeeeeb/go-ethereum/terraform/eks/token.txt
       kubectl create secret docker-registry regcred \
         --docker-server=hub.docker.com/u/danieldim12 \
         --docker-username=danieldim12 \

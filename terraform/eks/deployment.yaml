@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-contract-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-contract-app
+  template:
+    metadata:
+      labels:
+        app: my-contract-app
+    spec:
+      containers:
+      - name: my-contract-container
+        image: danieldim12/my-image:latest 
+        ports:
+        - containerPort: 8545
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-contract-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-contract-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8545
