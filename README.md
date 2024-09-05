@@ -1,7 +1,20 @@
 ## Go Ethereum
 
- I will go ahead and explain my work shortly. 
- **Taks 2:** is done within the directory: 
+ I will go ahead and explain my work shortly. The solutions for the tasks are placed as it comes below:
+
+ **Taks 2:** is done within the directory: .github/workflows/docker-build.yml
+ **Task 3:** is placed within directories:
+         1. .github/workflows/deploy-contracts.yaml
+         2. hardhat
+
+I would like to mention that this is the task that I spent most of my time on. I am very glad that I had an opportunity to learn more about something related to blockchain technologies. I faced a few issues regarding the installation of the devnet local environment.
+**Task 4:** Just because it is related to the previous task I could not implement my skills and experience regarding this task.
+**Task 5:** This is my favorite task and I am sure that I can contribute a lot to your team in similar tasks. I am working on building and improving the AWS infrastructure on a daily base at my current position.
+
+I am a person who always goes the extra mile to achieve my goals and targets, but this time my focus was on resolving the required tasks.
+I going to continue working on these tasks until I get them 100% completed, no matter if we continue the hiring process or not. 
+
+**Thanks!** 
 
 Golang execution layer implementation of the Ethereum protocol.
 
