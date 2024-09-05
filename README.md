@@ -1,6 +1,7 @@
 ## Go Ethereum
 
- I will go ahead and expli
+ I will go ahead and explain my work shortly. 
+ **Taks 2:** is done within the directory: 
 
 Golang execution layer implementation of the Ethereum protocol.
 
