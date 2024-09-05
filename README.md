@@ -1,4 +1,19 @@
-## Go Ethereum
+![image](https://github.com/user-attachments/assets/b9e6b8ff-58cc-421b-a192-a0078add11a1)## Go Ethereum
+
+I'll go ahead and describe my work shortly. I want to mention that I will continue to work on these tasks because they are not completed yet. 
+**Task 2.** is within the directory .github/workflows/docker-build.yaml
+**Task 3**. is within directories: 
+   1. .github/workflows/deploy-contracts.yaml
+   2. hardhat
+
+I would like to mention that this task took me most of the time because it is a technology I am unfamiliar with. I will continue further learning about it and following its best practices for further tasks.
+**Task 4** Because it is the following part of the previous task, I was unable to implement the best practices regarding it.
+**Task 5** is within the directory: **terraform**. This was my favorite task. I could go even deeper with the infrastructure's configuration implementing the best practices. This is something that I do on a daily base in my current job. 
+I am a person who always goes the extra mile to achieve the goals and targets but I had no time to do the bonus task, honestly.
+
+I would like to continue working on these tasks until they are 100% complete no matter if we continue the hiring process or not. Thanks!
+
+![image](https://github.com/user-attachments/assets/babc8180-5d63-4e17-8718-8c7e14a52483)
 
 Golang execution layer implementation of the Ethereum protocol.
 
