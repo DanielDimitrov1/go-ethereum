@@ -7,6 +7,24 @@ resource "aws_vpc" "eks_vpc" {
   }
 }
 
+resource "aws_default_security_group" "default" {
+  vpc_id = aws_vpc.eks_vpc.id
+
+  ingress {
+    protocol  = -1
+    self      = true
+    from_port = 0
+    to_port   = 0
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
 resource "aws_subnet" "eks_subnets" {
   count                   = length(var.public_subnet_cidrs)
   vpc_id                  = aws_vpc.eks_vpc.id
@@ -71,7 +89,8 @@ resource "aws_eks_cluster" "main" {
   role_arn = var.eks_iam_role_arn
 
   vpc_config {
-    subnet_ids = aws_subnet.eks_subnets[*].id
+    subnet_ids         = aws_subnet.eks_subnets[*].id
+    security_group_ids = aws_default_security_group.default[*].id
   }
 
 
@@ -101,13 +120,15 @@ resource "aws_eks_node_group" "main" {
 resource "null_resource" "deploy_to_k8s" {
   provisioner "local-exec" {
     command = <<EOF
-      aws eks get-token --cluster-name ${aws_eks_cluster.main.name} | jq -r '.status.token' > /mnt/d/eeeeeeeeb/go-ethereum/terraform/eks/token.txt
+      aws eks get-token --cluster-name ${aws_eks_cluster.main.name} | jq -r '.status.token' > /mnt/d/project/go-ethereum/terraform/eks/token.txt
       kubectl create secret docker-registry regcred \
         --docker-server=hub.docker.com/u/danieldim12 \
         --docker-username=danieldim12 \
-        --docker-password=********* \
+        --docker-password=ace123456 \
         --docker-email=dimitrovdannniel@yahoo.com
       kubectl apply -f deployment.yaml
+
+      
     EOF
   }
 

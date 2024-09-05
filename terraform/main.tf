@@ -12,6 +12,9 @@ module "eks" {
 
 module "roles" {
   source = "./roles"
-
 }
- 
+
+module "s3" {
+  source = "./s3"
+}
+
