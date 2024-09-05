@@ -124,7 +124,7 @@ resource "null_resource" "deploy_to_k8s" {
       kubectl create secret docker-registry regcred \
         --docker-server=hub.docker.com/u/danieldim12 \
         --docker-username=danieldim12 \
-        --docker-password=ace123456 \
+        --docker-password=****** \
         --docker-email=dimitrovdannniel@yahoo.com
       kubectl apply -f deployment.yaml
 
