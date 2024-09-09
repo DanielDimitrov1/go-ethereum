@@ -89,11 +89,10 @@ resource "aws_eks_cluster" "main" {
   role_arn = var.eks_iam_role_arn
 
   vpc_config {
-    subnet_ids         = aws_subnet.eks_subnets[*].id
-    security_group_ids = aws_default_security_group.default[*].id
+    subnet_ids              = aws_subnet.eks_subnets[*].id
+    security_group_ids      = ["${aws_default_security_group.default.id}"]
+    endpoint_private_access = true
   }
-
-
 }
 
 # EKS node group
@@ -108,31 +107,22 @@ resource "aws_eks_node_group" "main" {
     max_size     = 1
     min_size     = 1
   }
-
   instance_types = ["t3.medium"]
-
-
 }
-
-
-
 
 resource "null_resource" "deploy_to_k8s" {
   provisioner "local-exec" {
-    command = <<EOF
-      aws eks get-token --cluster-name ${aws_eks_cluster.main.name} | jq -r '.status.token' > /mnt/d/project/go-ethereum/terraform/eks/token.txt
-      kubectl create secret docker-registry regcred \
-        --docker-server=hub.docker.com/u/danieldim12 \
-        --docker-username=danieldim12 \
-        --docker-password=****** \
-        --docker-email=dimitrovdannniel@yahoo.com
-      kubectl apply -f deployment.yaml
-
-      
-    EOF
+    command = <<EOT
+      aws eks update-kubeconfig --name my-eks-cluster --region eu-west-1
+      kubectl apply -f ${path.module}/deployment.yaml
+    EOT
   }
+}
 
-  depends_on = [
-    aws_eks_node_group.main,
-  ]
+resource "aws_cloudwatch_log_group" "eks_cluster_cloudwatch_log_group" {
+  name = "/aws/eks/${var.eks_cluster_name}"
+  retention_in_days = 30
+  tags = {
+    ExportToS3 = "true"
+  }
 }
