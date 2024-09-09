@@ -110,6 +110,9 @@ resource "aws_eks_node_group" "main" {
   instance_types = ["t3.medium"]
 }
 
+# After applying the infrastructure, we have to run the command "aws eks update-kubeconfig --name my-eks-cluster --region eu-west-1" 
+# just to make sure that we can connect with our EKS resource. If the infra is not applying properly, first comment the null resource, than apply.
+
 resource "null_resource" "deploy_to_k8s" {
   provisioner "local-exec" {
     command = <<EOT
@@ -117,6 +120,10 @@ resource "null_resource" "deploy_to_k8s" {
       kubectl apply -f ${path.module}/deployment.yaml
     EOT
   }
+  depends_on = [
+    aws_eks_cluster.main,
+    aws_eks_node_group.main
+  ]
 }
 
 resource "aws_cloudwatch_log_group" "eks_cluster_cloudwatch_log_group" {
