@@ -31,6 +31,7 @@ jobs:
         run: |
           npm init -y
           npm install --save-dev hardhat
+          npm install --save-dev @nomicfoundation/hardhat-toolbox
           pwd
           ls -la
       - name: what
