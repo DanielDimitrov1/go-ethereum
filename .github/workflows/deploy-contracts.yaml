@@ -27,7 +27,12 @@ jobs:
           echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
           cd ../
           docker compose up -d
-
+      - name: install np
+        run: |
+          npm init -y
+          npm install --save-dev hardhat
+          pwd
+          ls -la
       - name: what
         run: |
           cd hardhat/ignition/
