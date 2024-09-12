@@ -33,7 +33,7 @@ jobs:
           cd hardhat/ignition/
           sudo chmod -R 0700 modules
           ls -la && pwd
-          cd modules/
+          cd modules/ & pwd
 
           npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
           
