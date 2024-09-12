@@ -30,7 +30,7 @@ jobs:
           
       - name: Deploy contracts
         run: |
-          sudo chmod 0700 hardhat
+          sudo chmod 0700 /hardhat/ignition
           cd hardhat/
           cd ./ignition/modules
           npx hardhat ignition deploy ./ignition/modules/Token.js --network eth-pos-devnet_default
