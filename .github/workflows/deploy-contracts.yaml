@@ -33,8 +33,9 @@ jobs:
           npm install --save-dev hardhat
           npm install --save-dev @nomicfoundation/hardhat-toolbox
           npx hardhat init
-          pwd
-          ls -la
+          npm fund
+          npm audit fix
+
       - name: what
         run: |
           cd hardhat/ignition/
