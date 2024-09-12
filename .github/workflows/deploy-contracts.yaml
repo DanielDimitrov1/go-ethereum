@@ -29,7 +29,7 @@ jobs:
           docker compose up -d
           
       - name: Deploy contracts
-        working-directory: ./go-ethereum/hardhat
+        working-directory: /hardhat
 
         run: |
           # # working-directory: ./go-ethereum/
