@@ -30,17 +30,22 @@ jobs:
           
       - name: install np
         run: |
+
+          cd hardhat/ignition/
+          sudo chmod -R 0777 modules
+          cd modules/
+          
           touch hardhat/hardhat.config.js
           yarn add --dev hardhat
           npm uninstall --global hardhat
           npx hardhat compile
 
           
-          cd hardhat/ignition/
-          sudo chmod -R 0777 modules
-          cd modules/
-          pwd
-          ls -la
+          # cd hardhat/ignition/
+          # sudo chmod -R 0777 modules
+          # cd modules/
+          # pwd
+          # ls -la
           npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
       
                   
