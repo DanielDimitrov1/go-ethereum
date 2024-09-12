@@ -31,10 +31,11 @@ jobs:
       - name: what
         run: |
           cd hardhat/ignition/
-          sudo chmod -R 0700 modules
+          sudo chmod -R 0777 modules
           ls -la
           cd modules/
           pwd
+          ls -la
 
           npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
           
