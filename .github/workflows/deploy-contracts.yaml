@@ -32,17 +32,16 @@ jobs:
           npm init -y
           npm install --save-dev hardhat
           npm install --save-dev @nomicfoundation/hardhat-toolbox
+          npx hardhat init
           pwd
           ls -la
       - name: what
         run: |
           cd hardhat/ignition/
           sudo chmod -R 0777 modules
-          ls -la
           cd modules/
           pwd
           ls -la
-
           npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
           
       - name: Deploy contracts
