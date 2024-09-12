@@ -33,7 +33,6 @@ jobs:
 
           yarn init -y
           yarn add --dev hardhat
-          npx hardhat init
           
 
 
