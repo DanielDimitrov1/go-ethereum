@@ -30,8 +30,9 @@ jobs:
           
       - name: Deploy contracts
         run: |
-          cd hardhat/ignition/modules
-          npx hardhat ignition deploy ./ignition/modules/Token.js --network eth-pos-devnet_default
+          cd hardhat
+          sudo cd ./ignition/modules
+          sudo npx hardhat ignition deploy ./ignition/modules/Token.js --network eth-pos-devnet_default
           
           # npx hardhat run scripts/sample-script.js --network localhost
         
