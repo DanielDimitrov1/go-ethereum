@@ -31,18 +31,11 @@ jobs:
       - name: install np
         run: |
 
-          # yarn init -y
-          # yarn add --dev hardhat
-                    
+          yarn init -y
+          yarn add --dev hardhat
+          npx hardhat init
           
-          npm init -y
-          npm install --save-dev hardhat
-          npm install --save-dev @nomicfoundation/hardhat-toolbox
-          winpty bash "$(which npx)" hardhat init
-          echo "1" | npx hardhat
 
-          npm fund
-          npm audit fix
 
       - name: DEPLOY
         run: |
