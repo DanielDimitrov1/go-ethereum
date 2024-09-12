@@ -26,19 +26,20 @@ jobs:
           cd eth-pos-devnet/consensus/
           echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
           cd ../
-          docker compose up -d
-      - name: install np
-        run: |
-          npm init -y
-          npm install --save-dev hardhat
-          npm install --save-dev @nomicfoundation/hardhat-toolbox
-          npx hardhat init
-          yes "Create a JavaScript project" | npx hardhat
 
-          npm fund
-          npm audit fix
+      #     docker compose up -d
+      # - name: install np
+      #   run: |
+      #     npm init -y
+      #     npm install --save-dev hardhat
+      #     npm install --save-dev @nomicfoundation/hardhat-toolbox
+      #     npx hardhat init
+      #     yes "Create a JavaScript project" | npx hardhat
 
-      - name: what
+      #     npm fund
+      #     npm audit fix
+
+      - name: DEPLOY
         run: |
           cd hardhat/ignition/
           sudo chmod -R 0777 modules
@@ -46,12 +47,7 @@ jobs:
           pwd
           ls -la
           npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
-          
-      - name: Deploy contracts
-        working-directory: /hardhat
-        run: |
-
-          npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
+      
                   
       - name: Build Docker image with deployed contracts
         run: |
