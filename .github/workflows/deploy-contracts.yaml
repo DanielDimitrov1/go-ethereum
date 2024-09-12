@@ -27,15 +27,14 @@ jobs:
           echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
           cd ../
           docker compose up -d
-          
-      - name: Print 
-        run: pwd
+
       - name: what
         run: |
+          pwd
           cd ../
           pwd
           ls -la
-          cd go-ethereum/hardhat && ls -la
+          cd go-ethereum/hardhat/ignition/modules/ && ls -la && pwd
           
       - name: Deploy contracts
         working-directory: /hardhat
