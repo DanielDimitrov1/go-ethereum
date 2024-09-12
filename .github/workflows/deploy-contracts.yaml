@@ -33,18 +33,15 @@ jobs:
           cd hardhat/ignition/
           sudo chmod -R 0700 modules
           ls -la && pwd
+
+          npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
           
       - name: Deploy contracts
         working-directory: /hardhat
         run: |
-          # # working-directory: ./go-ethereum/
-          # sudo chmod 0700 -R /hardhat
-          # cd hardhat/
-          sudo chmod 0700 -R ./ignition/modules
-          npx hardhat ignition deploy ./ignition/modules/Token.js --network eth-pos-devnet_default
-          
-          # npx hardhat run scripts/sample-script.js --network localhost
-        
+
+          npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
+                  
       - name: Build Docker image with deployed contracts
         run: |
           docker build -t my-image .
