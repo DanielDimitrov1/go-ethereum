@@ -22,7 +22,10 @@ jobs:
         
       - name: Setting Up an Ethereum Proof-of-Stake Devnet 
         run: |
-          git clone https://github.com/Offchainlabs/eth-pos-devnet && cd eth-pos-devnet
+          git clone https://github.com/Offchainlabs/eth-pos-devnet
+          cd eth-pos-devnet/consensus/
+          echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
+          cd ../
           docker compose up -d
           
       - name: Deploy contracts
