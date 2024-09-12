@@ -35,9 +35,9 @@ jobs:
           npm init -y
           npm install --save-dev hardhat
           npx hardhat init
-          
-          
-        run: npx hardhat run scripts/sample-script.js --network localhost
+          printf "n\n" | npx hardhat
+
+          npx hardhat run scripts/sample-script.js --network localhost
         
       - name: Build Docker image with deployed contracts
         run: |
