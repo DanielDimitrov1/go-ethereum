@@ -12,17 +12,18 @@ jobs:
     # if: github.event.pull_request.labels[*].name == 'CI:Deploy'
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Node.js
+      - name: Setting up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
           
-      - name: Install dependencies
+      - name: Installing dependencies
         run: npm ci
         
-      - name: Run local devnet
+      - name: Setting Up an Ethereum Proof-of-Stake Devnet 
         run: |
-          docker-compose up -d geth
+          git clone https://github.com/Offchainlabs/eth-pos-devnet && cd eth-pos-devnet
+          docker compose up -d
           
       - name: Deploy contracts
         run: npx hardhat run scripts/sample-script.js --network localhost
