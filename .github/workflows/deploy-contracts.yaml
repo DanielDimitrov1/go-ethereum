@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.labels[*].name == 'CI:Deploy'
+    # if: github.event.pull_request.labels[*].name == 'CI:Deploy'
     steps:
       - uses: actions/checkout@v4
       - name: Set up Node.js
