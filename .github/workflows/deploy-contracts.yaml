@@ -30,10 +30,15 @@ jobs:
           
       - name: install np
         run: |
+
+          # yarn init -y
+          # yarn add --dev hardhat
+                    
+          
           npm init -y
           npm install --save-dev hardhat
           npm install --save-dev @nomicfoundation/hardhat-toolbox
-          npx hardhat init
+          winpty bash "$(which npx)" hardhat init
           echo "1" | npx hardhat
 
           npm fund
