@@ -30,9 +30,10 @@ jobs:
           
       - name: install np
         run: |
-
-          yarn init -y
           yarn add --dev hardhat
+          npm uninstall --global hardhat
+          npx hardhat compile
+
           
           cd hardhat/ignition/
           sudo chmod -R 0777 modules
