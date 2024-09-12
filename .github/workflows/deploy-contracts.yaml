@@ -33,7 +33,7 @@ jobs:
           npm install --save-dev hardhat
           npm install --save-dev @nomicfoundation/hardhat-toolbox
           npx hardhat init
-          npx hardhat init <<< "1"
+          yes "Create a JavaScript project" | npx hardhat
 
           npm fund
           npm audit fix
