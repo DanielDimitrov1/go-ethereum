@@ -29,7 +29,10 @@ jobs:
           docker compose up -d
           
       - name: Deploy contracts
+        working-directory: ./go-ethereum/
+
         run: |
+          # working-directory: ./go-ethereum/
           sudo chmod 0700 -R /hardhat
           cd hardhat/
           cd ./ignition/modules
