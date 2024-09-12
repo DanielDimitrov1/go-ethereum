@@ -30,10 +30,9 @@ jobs:
 
       - name: what
         run: |
-          pwd
-          pwd
-          ls -la
-          cd hardhat/ignition/modules/ && ls -la && pwd
+          cd hardhat/ignition/
+          sudo chmod -R 0700 modules
+          ls -la && pwd
           
       - name: Deploy contracts
         working-directory: /hardhat
