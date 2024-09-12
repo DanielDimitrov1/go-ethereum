@@ -31,10 +31,9 @@ jobs:
       - name: what
         run: |
           pwd
-          cd ../
           pwd
           ls -la
-          cd go-ethereum/hardhat/ignition/modules/ && ls -la && pwd
+          cd hardhat/ignition/modules/ && ls -la && pwd
           
       - name: Deploy contracts
         working-directory: /hardhat
