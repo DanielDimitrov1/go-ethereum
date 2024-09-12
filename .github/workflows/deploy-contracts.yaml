@@ -28,9 +28,11 @@ jobs:
           cd ../
           docker compose up -d
           
+      - name: Print 
+        run: pwd
+        
       - name: Deploy contracts
         working-directory: /hardhat
-
         run: |
           # # working-directory: ./go-ethereum/
           # sudo chmod 0700 -R /hardhat
