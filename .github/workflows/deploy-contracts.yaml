@@ -30,6 +30,7 @@ jobs:
           
       - name: install np
         run: |
+          touch hardhat/hardhat.config.js
           yarn add --dev hardhat
           npm uninstall --global hardhat
           npx hardhat compile
