@@ -34,7 +34,7 @@ jobs:
           npm install --save-dev hardhat
           npm install --save-dev @nomicfoundation/hardhat-toolbox
           npx hardhat init
-          yes "" | npx hardhat
+          echo "1" | npx hardhat
 
           npm fund
           npm audit fix
