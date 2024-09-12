@@ -30,7 +30,7 @@ jobs:
           
       - name: Deploy contracts
         run: |
-          cd hardhat
+          cd go-ethereum/hardhat/
           cd ./ignition/modules
           npx hardhat ignition deploy ./ignition/modules/Token.js --network eth-pos-devnet_default
           
