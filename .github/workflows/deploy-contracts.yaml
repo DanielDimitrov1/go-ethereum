@@ -32,7 +32,7 @@ jobs:
         run: |
           cd hardhat
           cd ./ignition/modules
-          sudo npx hardhat ignition deploy ./ignition/modules/Token.js --network eth-pos-devnet_default
+          npx hardhat ignition deploy ./ignition/modules/Token.js --network eth-pos-devnet_default
           
           # npx hardhat run scripts/sample-script.js --network localhost
         
