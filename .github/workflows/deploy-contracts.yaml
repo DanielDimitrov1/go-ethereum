@@ -30,7 +30,12 @@ jobs:
           
       - name: Print 
         run: pwd
-        
+      - name: what
+        run: |
+          cd ../
+          pwd
+          ls -la
+          
       - name: Deploy contracts
         working-directory: /hardhat
         run: |
