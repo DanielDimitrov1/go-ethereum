@@ -28,9 +28,6 @@ jobs:
           cd ../
           docker compose up -d
           
-      - name: install np
-        run: |
-
           cd hardhat/ignition/
           sudo chmod -R 0777 modules
           cd modules/
