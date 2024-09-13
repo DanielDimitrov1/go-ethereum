@@ -44,15 +44,21 @@ jobs:
           npm install --save-dev "@nomicfoundation/hardhat-verify@^2.0.0"
           npm install --save-dev "@typechain/ethers-v6@^0.5.0"
           npm install --save-dev "@typechain/hardhat@^9.0.0"
+          npm install --save-dev "@types/chai@^4.2.0"
+          npm install --save-dev "@types/mocha@>=9.1.0"
+          npm install --save-dev "@types/node@>=18.0.0"
+          npm install --save-dev "chai@^4.2.0"
+          npm install --save-dev "ethers@^6.4.0"
+          npm install --save-dev "hardhat-gas-reporter@^1.0.8"
+          npm install --save-dev "solidity-coverage@^0.8.1"
+          npm install --save-dev "ts-node@>=8.0.0"
+          npm install --save-dev "typechain@^8.3.0"
+          npm install --save-dev "typescript@>=4.5.0"
           npx hardhat compile
 
           
-          # cd hardhat/ignition/
-          # sudo chmod -R 0777 modules
-          # cd modules/
-          # pwd
-          # ls -la
-          npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
+        
+          # npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
       
                   
       - name: Build Docker image with deployed contracts
