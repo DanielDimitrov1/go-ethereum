@@ -58,7 +58,7 @@ jobs:
 
           
         
-          # npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
+          npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
       
                   
       - name: Build Docker image with deployed contracts
