@@ -27,11 +27,14 @@ jobs:
           echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
           cd ../
           docker compose up -d
+          pwd
+          ls -la
           
           cd hardhat/ignition/
           sudo chmod -R 0777 modules
           cd modules/
-          
+
+
           yarn add --dev hardhat
           npm uninstall --global hardhat
           npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0"
