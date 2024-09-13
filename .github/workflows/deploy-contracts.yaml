@@ -37,6 +37,13 @@ jobs:
           
           yarn add --dev hardhat
           npm uninstall --global hardhat
+          npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0"
+          npm install --save-dev "@nomicfoundation/hardhat-ethers@^3.0.0"
+          npm install --save-dev "@nomicfoundation/hardhat-ignition-ethers@^0.15.0"
+          npm install --save-dev "@nomicfoundation/hardhat-network-helpers@^1.0.0"
+          npm install --save-dev "@nomicfoundation/hardhat-verify@^2.0.0"
+          npm install --save-dev "@typechain/ethers-v6@^0.5.0"
+          npm install --save-dev "@typechain/hardhat@^9.0.0"
           npx hardhat compile
 
           
