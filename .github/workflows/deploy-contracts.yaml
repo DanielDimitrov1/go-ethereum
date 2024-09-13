@@ -59,10 +59,10 @@ jobs:
           # npm audit fix --force
           
         
-          npx hardhat ignition deploy Token.js --network eth-pos-devnet_default
+          npx hardhat ignition deploy Token.js
           
-          #Test - TASK
-          # npx hardhat test
+          #Test - TASK 4
+          npx hardhat test
                   
       - name: Build Docker image with deployed contracts
         run: |
