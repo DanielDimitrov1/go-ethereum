@@ -27,6 +27,7 @@ jobs:
           echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
           cd ../
           docker compose up -d
+          cd ../
           pwd
           ls -la
           
