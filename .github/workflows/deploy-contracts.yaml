@@ -56,7 +56,6 @@ jobs:
 
           
           npx hardhat vars set SEPOLIA_PRIVATE_KEY ${{ secrets.SEPOLIA_PRIVATE_KEY }}
-          npx hardhat vars setup
           
           npx hardhat compile
           
