@@ -12,4 +12,4 @@ module.exports = {
     hardhat: {
       // See its defaults
     }
-};
+}
