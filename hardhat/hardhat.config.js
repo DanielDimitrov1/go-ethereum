@@ -6,7 +6,7 @@ const DEVNET_PRIVATE_KEY = process.env.DEVNET_PRIVATE_KEY
 module.exports = {
   solidity: "0.8.13",
   networks: {
-    localhost: {
+    devnet: {
       url: "http://127.0.0.1:8545"
     }
 }
