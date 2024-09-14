@@ -60,6 +60,8 @@ jobs:
           
           pwd
           #npx hardhat ignition deploy Token.js
+          cd ../../
+          pwd
           npx hardhat ignition deploy ./ignition/modules/Token.js
 
           
