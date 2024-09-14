@@ -59,7 +59,9 @@ jobs:
           # npm audit fix --force
           
           pwd
-          npx hardhat ignition deploy Token.js
+          #npx hardhat ignition deploy Token.js
+          npx hardhat ignition deploy ./ignition/modules/Token.js
+
           
           #Test - TASK 4
           npx hardhat test
@@ -73,10 +75,10 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64
-          tags: danieldim12/my-image:latest
+          tags: danieldim12/built-image:latest
 
       - name: Run Hardhat tests
         run: |
-          docker run -p 8545:8545 -d my-image:latest
+          docker run -p 8545:8545 -d built-image:latest
           sleep 10 
           npx hardhat test
