@@ -1,7 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 const { vars } = require("hardhat/config");
 
-const SEPOLIA_PRIVATE_KEY = vars.get("SEPOLIA_PRIVATE_KEY");
+const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY
 
 module.exports = {
   solidity: "0.8.24",
