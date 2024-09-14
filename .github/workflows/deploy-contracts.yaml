@@ -53,12 +53,10 @@ jobs:
           npm install --save-dev "ts-node@>=8.0.0"
           npm install --save-dev "typechain@^8.3.0"
           npm install --save-dev "typescript@>=4.5.0"
-          npx hardhat vars set INFURA_API_KEY
+          npx hardhat vars set SEPOLIA_PRIVATE_KEY
+          npx hardhat vars set SEPOLIA_PRIVATE_KEY ${{ secrets.SEPOLIA_PRIVATE_KEY }}
           npx hardhat compile
-          
-          pwd
-          cd ../../
-          pwd
+        
           npx hardhat ignition deploy Token.js --network sepolia
 
           
