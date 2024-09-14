@@ -34,7 +34,7 @@ jobs:
           cd modules/
 
           sudo npm init
-          sudo npm install --save-dev hardhat
+          # sudo npm install --save-dev hardhat
 
           npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0"
           npm install --save-dev "@nomicfoundation/hardhat-ethers@^3.0.0"
