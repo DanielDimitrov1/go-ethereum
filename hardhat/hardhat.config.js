@@ -7,6 +7,8 @@ module.exports = {
   solidity: "0.8.13",
   networks: {
     devnet: {
-      url: "http://127.0.0.1:8545/${DEVNET_PRIVATE_KEY}"
-    }
-}
+      url: "http://127.0.0.1:8545/${DEVNET_PRIVATE_KEY}",
+      accounts: [DEVNET_PRIVATE_KEY],
+    },
+  },
+};
