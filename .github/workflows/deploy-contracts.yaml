@@ -32,9 +32,9 @@ jobs:
           cd hardhat/ignition/
           sudo chmod -R 0777 modules
           cd modules/
-
-          sudo npm init
-          # sudo npm install --save-dev hardhat
+          
+          yarn add --dev hardhat
+          npm uninstall --global hardhat
 
           npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0"
           npm install --save-dev "@nomicfoundation/hardhat-ethers@^3.0.0"
