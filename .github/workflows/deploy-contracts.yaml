@@ -33,8 +33,9 @@ jobs:
           sudo chmod -R 0777 modules
           cd modules/
           
+          yarn init
+
           yarn add --dev hardhat
-          npm uninstall --global hardhat
 
           npm install --save-dev "@nomicfoundation/hardhat-chai-matchers@^2.0.0"
           npm install --save-dev "@nomicfoundation/hardhat-ethers@^3.0.0"
@@ -58,7 +59,7 @@ jobs:
           npx hardhat vars set SEPOLIA_PRIVATE_KEY ${{ secrets.SEPOLIA_PRIVATE_KEY }}
           
           npx hardhat compile
-        
+          
           npx hardhat ignition deploy Token.js --network sepolia
 
           
