@@ -59,10 +59,9 @@ jobs:
           # npm audit fix --force
           
           pwd
-          #npx hardhat ignition deploy Token.js
           cd ../../
           pwd
-          npx hardhat ignition deploy Token.js
+          npx hardhat ignition deploy Token.js --network sepolia
 
           
           #Test - TASK 4
