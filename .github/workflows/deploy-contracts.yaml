@@ -53,7 +53,8 @@ jobs:
           npm install --save-dev "ts-node@>=8.0.0"
           npm install --save-dev "typechain@^8.3.0"
           npm install --save-dev "typescript@>=4.5.0"
-
+          
+          npm audit fix --force
           
           npx hardhat vars set SEPOLIA_PRIVATE_KEY ${{ secrets.SEPOLIA_PRIVATE_KEY }}
           
