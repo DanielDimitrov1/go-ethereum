@@ -57,7 +57,7 @@ jobs:
           
           # npx hardhat compile
           
-          npx hardhat ignition deploy Token.js --network sepolia
+          npx hardhat ignition deploy Token.js --network localhost
 
           
           #Test - TASK 4
