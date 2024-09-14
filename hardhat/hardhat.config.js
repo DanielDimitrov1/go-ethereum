@@ -1,14 +1,14 @@
 require("@nomicfoundation/hardhat-toolbox");
 const { vars } = require("hardhat/config");
 
-const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY
+const DEVNET_PRIVATE_KEY = process.env.DEVNET_PRIVATE_KEY
 
 module.exports = {
-  solidity: "0.8.24",
+  solidity: "0.8.13",
   networks: {
-    sepolia: {
+    localhost: {
       url: `http://localhost:8545`,
-      accounts: [SEPOLIA_PRIVATE_KEY],
+      accounts: [DEVNET_PRIVATE_KEY],
     },
   },
 };
