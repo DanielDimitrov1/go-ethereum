@@ -8,7 +8,7 @@ module.exports = {
   networks: {
     devnet: {
       url: 'http://localhost:8545/${process.env.DEVNET_PRIVATE_KEY}',
-      accounts: [DEVNET_PRIVATE_KEY]",
+      accounts: [DEVNET_PRIVATE_KEY],
       chainId: "32382"
     },
   },
