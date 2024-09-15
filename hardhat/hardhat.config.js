@@ -16,7 +16,7 @@ module.exports = {
   networks: {
     devnet: {
       url: 'http://localhost:8545',
-      accounts: DEVNET_PRIVATE_KEY ? [`0x${DEVNET_PRIVATE_KEY}`] : [],
+      accounts: DEVNET_PRIVATE_KEY ? [`0x${DEVNET_PRIVATE_KEY}`] : [`0x${DEVNET_PRIVATE_KEY}`],
       chainId: 32382,
       gas: 'auto',
       gasPrice: 'auto',
