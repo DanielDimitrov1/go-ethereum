@@ -21,6 +21,8 @@ jobs:
         run: npm ci
         
       - name: Setting Up an Ethereum Proof-of-Stake Devnet 
+        env:
+          DEVNET_PRIVATE_KEY: ${{ secrets.DEVNET_PRIVATE_KEY }}
 
         run: |
           git clone https://github.com/Offchainlabs/eth-pos-devnet
