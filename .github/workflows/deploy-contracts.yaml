@@ -25,6 +25,13 @@ jobs:
           DEVNET_PRIVATE_KEY: ${{ secrets.DEVNET_PRIVATE_KEY }}
 
         run: |
+          #Install GO
+
+          sudo wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz -O go.tar.gz
+          sudo tar -xzvf go.tar.gz -C /usr/local
+          echo export PATH=$HOME/go/bin:/usr/local/go/bin:$PATH >> ~/.profile
+          go version
+          
           git clone https://github.com/Offchainlabs/eth-pos-devnet
           cd eth-pos-devnet/consensus/
           echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
