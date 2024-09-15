@@ -21,7 +21,7 @@ jobs:
         run: npm ci
         
       - name: Setting Up an Ethereum Proof-of-Stake Devnet 
-        continue-on-error: true
+
         run: |
           git clone https://github.com/Offchainlabs/eth-pos-devnet
           cd eth-pos-devnet/consensus/
@@ -65,11 +65,11 @@ jobs:
           npx hardhat test
                   
       - name: Build Docker image with deployed contracts
-        continue-on-error: true
+
         run: |
           docker build -t my-image .
       - name: Push Docker image
-        continue-on-error: true
+
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -78,7 +78,7 @@ jobs:
           tags: danieldim12/built-image:latest
 
       - name: Run Hardhat tests
-        continue-on-error: true
+
         run: |
           docker run -p 8545:8545 -d built-image:latest
           sleep 10 
