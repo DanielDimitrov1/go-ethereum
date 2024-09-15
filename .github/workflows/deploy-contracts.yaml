@@ -20,33 +20,16 @@ jobs:
       - name: Installing dependencies
         run: npm ci
 
-      - name: Set up Go
+      - name: Setting up Go
         uses: actions/setup-go@v4
         with:
           go-version: '1.22.0' 
+          
       - name: Setting Up an Ethereum Proof-of-Stake Devnet 
         env:
           DEVNET_PRIVATE_KEY: ${{ secrets.DEVNET_PRIVATE_KEY }}
         
         run: |
-          #Install GO
-
-          # sudo wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz -O go.tar.gz
-          # sudo tar -xzvf go.tar.gz -C /usr/local
-          # echo export PATH=$HOME/go/bin:/usr/local/go/bin:$PATH >> ~/.profile
-          # go version
-
-          #Install NodeJs
-
-          # sudo apt update
-          # sudo apt install curl git
-          # curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-          # sudo apt-get install -y nodejs
-
-          go version
-          node --version
-
-          
           git clone https://github.com/Offchainlabs/eth-pos-devnet
           cd eth-pos-devnet/consensus/
           echo "ELECTRA_FORK_VERSION: 0x20000094" >> config.yml
