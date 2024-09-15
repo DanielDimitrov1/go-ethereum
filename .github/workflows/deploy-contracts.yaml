@@ -62,7 +62,7 @@ jobs:
           
           npx hardhat compile --force
           
-          npx hardhat ignition deploy Token.js --network devnet
+          npx hardhat ignition deploy Token.js --network devnet --yes
 
           
           #Test - TASK 4
