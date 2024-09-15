@@ -59,7 +59,7 @@ jobs:
           npm install --save-dev "dotenv"
                     
           
-          npx hardhat compile
+          npx hardhat compile --force
           
           npx hardhat ignition deploy Token.js --network devnet -y
 
