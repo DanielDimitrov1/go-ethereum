@@ -1,4 +1,4 @@
-name: Deploy Contracts
+%name: Deploy Contracts
 
 on:
   pull_request:
@@ -19,7 +19,11 @@ jobs:
           
       - name: Installing dependencies
         run: npm ci
-        
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21' 
       - name: Setting Up an Ethereum Proof-of-Stake Devnet 
         env:
           DEVNET_PRIVATE_KEY: ${{ secrets.DEVNET_PRIVATE_KEY }}
@@ -27,10 +31,10 @@ jobs:
         run: |
           #Install GO
 
-          sudo wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz -O go.tar.gz
-          sudo tar -xzvf go.tar.gz -C /usr/local
-          echo export PATH=$HOME/go/bin:/usr/local/go/bin:$PATH >> ~/.profile
-          go version
+          # sudo wget https://go.dev/dl/go1.21.4.linux-amd64.tar.gz -O go.tar.gz
+          # sudo tar -xzvf go.tar.gz -C /usr/local
+          # echo export PATH=$HOME/go/bin:/usr/local/go/bin:$PATH >> ~/.profile
+          # go version
 
           #Install NodeJs
 
