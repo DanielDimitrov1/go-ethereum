@@ -5,7 +5,7 @@ const DEVNET_PRIVATE_KEY = process.env.DEVNET_PRIVATE_KEY;
 
 module.exports = {
   solidity: {
-    version: "0.8.24",  // Updated to match the contract's Solidity version
+    version: "0.8.24",  
     settings: {
       optimizer: {
         enabled: true,
@@ -16,7 +16,7 @@ module.exports = {
   networks: {
     devnet: {
       url: 'http://localhost:8545',
-      accounts: DEVNET_PRIVATE_KEY ? [`0x${DEVNET_PRIVATE_KEY}`] : [`0x${DEVNET_PRIVATE_KEY}`],
+      accounts: [`0x${DEVNET_PRIVATE_KEY}`],
       chainId: 32382,
       gas: 'auto',
       gasPrice: 'auto',
