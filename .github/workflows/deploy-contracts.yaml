@@ -69,19 +69,15 @@ jobs:
           
           npx hardhat ignition deploy Token.js --network devnet
           echo "y" | npx hardhat ignition deploy Token.js --network devnet
-          #yes | npx hardhat ignition deploy Token.js --network devnet
-          
-
-          
+                 
           #Test - TASK 4
           npx hardhat test
                   
       - name: Build Docker image with deployed contracts
-
         run: |
           docker build -t my-image .
+ 
       - name: Push Docker image
-
         uses: docker/build-push-action@v6
         with:
           context: .
