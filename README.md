@@ -1,17 +1,17 @@
 ## Go Ethereum
 
-**Task 1:** Update your forked repo with the following functionality:
-        - When a PR with label `CI:Build` is merged in it, a trigger kicks in and:
-        - builds a new docker image of the given project
-        - uploads it to a registry
+**Task 1:** Update your forked repo with the following functionality:  <br />
+        - When a PR with label `CI:Build` is merged in it, a trigger kicks in and:  <br />
+        - builds a new docker image of the given project  <br />
+        - uploads it to a registry  <br />
         - Create a Docker Compose definition that runs a local devnet with the newly built image.  <br />
  ***Solution:*** This is done within the directory: .github/workflows/docker-build.yml <br />    
  
  **Task 3:**  Create e new directory named `hardhat` in the repository. Inside it start a new **Sample Hardhat Project** (*following official Hardhat docs*)  <br />
     1. When a PR with label `CI:Deploy` is merged in the repo, a pipeline is triggered that:  <br />
-        1. runs a local devnet using the forked `go-ethereum` image.  <br />
-        2. deploys the Sample Hardhat Project to it.  <br />
-        3. builds a new docker image, which allows to run an instance of the devnet with the contracts already deployed and uploads it to the same registry with a suitable different tag  <br />
+        - runs a local devnet using the forked `go-ethereum` image.  <br />
+        - deploys the Sample Hardhat Project to it.  <br />
+        - builds a new docker image, which allows to run an instance of the devnet with the contracts already deployed and uploads it to the same registry with a suitable different tag  <br />
  ***Solution:*** is placed within directories: <br />
          1. .github/workflows/deploy-contracts.yaml <br />
          2. hardhat <br />
