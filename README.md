@@ -8,7 +8,7 @@
  ***Solution:*** This is done within the directory: [.github/workflows/docker-build.yml](https://github.com/DanielDimitrov1/go-ethereum/blob/master/.github/workflows/docker-build.yml) <br />    
  
  **Task 3:**  Create e new directory named `hardhat` in the repository. Inside it start a new **Sample Hardhat Project** (*following official Hardhat docs*)  <br />
-    1. When a PR with label `CI:Deploy` is merged in the repo, a pipeline is triggered that:  <br />
+        - When a PR with label `CI:Deploy` is merged in the repo, a pipeline is triggered that:  <br />
         - runs a local devnet using the forked `go-ethereum` image.  <br />
         - deploys the Sample Hardhat Project to it.  <br />
         - builds a new docker image, which allows to run an instance of the devnet with the contracts already deployed and uploads it to the same registry with a suitable different tag  <br />
