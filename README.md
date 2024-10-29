@@ -1,18 +1,24 @@
 ## Go Ethereum
 
- I will go ahead and explain my work shortly. The solutions for the tasks are placed as it comes below: <br />
-
- **Taks 2:** is done within the directory: .github/workflows/docker-build.yml br / <br />
- **Task 3:** is placed within directories: <br />
+**Task 1:** Update your forked repo with the following functionality:
+        - When a PR with label `CI:Build` is merged in it, a trigger kicks in and:
+        - builds a new docker image of the given project
+        - uploads it to a registry
+        - Create a Docker Compose definition that runs a local devnet with the newly built image.
+ **Solution:** This is done within the directory: .github/workflows/docker-build.yml br /       
+ 
+ is done within the directory: .github/workflows/docker-build.yml br / <br />
+ **Task 3:**  Create e new directory named `hardhat` in the repository. Inside it start a new **Sample Hardhat Project** (*following official Hardhat docs*)
+    1. When a PR with label `CI:Deploy` is merged in the repo, a pipeline is triggered that
+        1. runs a local devnet using the forked `go-ethereum` image.
+        2. deploys the Sample Hardhat Project to it.
+        3. builds a new docker image, which allows to run an instance of the devnet with the contracts already deployed and uploads it to the same registry with a suitable different tag
+ **Solution:** is placed within directories: <br />
          1. .github/workflows/deploy-contracts.yaml <br />
          2. hardhat <br />
 
-I would like to mention that this is the task that I spent most of my time on. I am very glad that I had an opportunity to learn more about something related to blockchain technologies. I faced a few issues regarding the installation of the devnet local environment. <br />
-**Task 4:** Just because it is related to the previous task I could not implement my skills and experience regarding this task. <br />
-**Task 5:** This is my favorite task and I am sure that I can contribute a lot to your team in similar tasks. I am working on building and improving the AWS infrastructure on a daily base at my current position. <br />
-
-I am a person who always goes the extra mile to achieve my goals and targets, but this time my focus was on resolving the required tasks hence I could not provide a solution for the  bonus task . <br />
-I going to continue working on these tasks until I get them 100% completed, no matter if we continue the hiring process or not. <br />
+**Task 4:** Create a Terraform script that quickly creates a k8s cluster in the cloud and deploys an instance of the built image to it. <br />
+**Solution:** https://github.com/DanielDimitrov1/go-ethereum/tree/master/terraform 
 
 **Thanks!** 
 
