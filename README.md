@@ -5,7 +5,7 @@
         - builds a new docker image of the given project  <br />
         - uploads it to a registry  <br />
         - Create a Docker Compose definition that runs a local devnet with the newly built image.  <br />
- ***Solution:*** This is done within the directory: .github/workflows/docker-build.yml <br />    
+ ***Solution:*** This is done within the directory: [.github/workflows/docker-build.yml](https://github.com/DanielDimitrov1/go-ethereum/blob/master/.github/workflows/docker-build.yml) <br />    
  
  **Task 3:**  Create e new directory named `hardhat` in the repository. Inside it start a new **Sample Hardhat Project** (*following official Hardhat docs*)  <br />
     1. When a PR with label `CI:Deploy` is merged in the repo, a pipeline is triggered that:  <br />
